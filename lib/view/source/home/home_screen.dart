@@ -53,7 +53,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             subtitle:  Text(snapshots.data!.docs[index]['email'].toString()),
                             trailing: InkWell(
                                 onTap: ()async{
-                                  await FirebaseFirestore.instance.collection('user').doc(userid).collection('insert').doc(snapshots.data!.docs[index].id).delete();
+                                  await FirebaseFirestore.instance.collection('user').
+                                  doc(userid).collection('insert').doc(snapshots.data!.docs[index].id).delete();
                                 },
                                 child: Icon(Icons.delete,color:Colors.red ,)),
                           ),
